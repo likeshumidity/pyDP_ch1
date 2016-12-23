@@ -2,10 +2,10 @@
 # from shortened
 # Request is used to encapsulate HTTP request. It will contain request
 # methods, request arguments and other related information
-# from flask import redirect, render_template, request, Flask
-# from werkzeug.exceptions import BadRequest, NotFound
+from flask import redirect, render_template, request, Flask
+from werkzeug.exceptions import BadRequest, NotFound
 
-from flask import *
+# from flask import *
 import models
 
 # Initialize Flask application
@@ -46,6 +46,6 @@ def redirect_to_full(path=''):
     return redirect(url_model.full_url)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
 
 
