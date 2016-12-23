@@ -44,6 +44,14 @@ class Url(object):
         return self.__increment_string(string[:-1] + 'a')
 
     @staticmethod
+    def __load_last_short_url():
+        """Returns last generated short url."""
+        try:
+            return pickle.load(open('last_short.p', 'rb'))
+        except IOError:
+            return ''
+
+    @staticmethod
     def __save_last_short_url(url):
         """Saves last generated short url."""
         pickle.dump(url, open('last_short.p', 'wb'))
